@@ -1,0 +1,185 @@
+body {
+    color: azure;
+    text-align: center;
+    background-color: darkgoldenrod;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: darkgoldenrod;
+    grid-area: header;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    display: none;
+}
+
+header .menu i{
+    display: none;
+}
+
+aside {
+    background-color: darkcyan;
+    grid-area: aside;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    grid-area: option;
+    margin-bottom: 1em;
+}
+
+section select {
+    width: 90%;
+}
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: black;
+    gap: 1em;
+}
+
+main img {
+    width: 70%;
+    -webkit-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.55);
+    -moz-box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.55);
+    box-shadow: 11px 11px 5px 0px rgba(0,0,0,0.55);
+}
+
+footer {
+    grid-area: footer;
+    background-color: darkgoldenrod;
+    padding-top: 1em;
+}
+footer a{
+    text-decoration: none;
+    color: azure;
+}
+
+footer a:hover{
+    color: darkorchid;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "header header header"
+                        "aside option option"
+                         "aside main main"
+                         "aside main main"
+                         "footer footer footer"; 
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    background-color: cornsilk;
+}
+
+.cards img:hover{
+    transform: scale(1.5);
+    transition: .6s;
+}
+
+.cards button{
+    border-radius: 0;
+    background-color: darkcyan;
+    padding: 3px 50px;
+    color: azure;
+}
+
+.cards button:hover{
+    background-color: rgb(136, 250, 250);
+}
+
+.cards button:focus{
+    background-color: gray;
+}
+
+@media (max-width: 992px) {
+    header {
+        display: block;
+        
+    }
+    header .menu {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-left: 1em;
+    }
+
+    header .menu i{
+        display: flex;
+        align-items: center;
+        padding-right: 1em;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas: "header"
+                             "option"
+                             "aside"
+                             "main"
+                             "footer"; 
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        color: black;
+        gap: 1em;
+    }
+
+    aside {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+    header {
+        display: block;
+        
+    }
+    header .menu {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-left: 1em;
+    }
+
+    header .menu i{
+        display: flex;
+        align-items: center;
+        padding-right: 1em;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas: "header"
+                             "option"
+                             "aside"
+                             "main"
+                             "footer"; 
+    }
+
+    main {
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        color: black;
+        gap: 1em;
+    }
+
+    aside {
+        display: none;
+    }
+
+}
